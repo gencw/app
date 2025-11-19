@@ -11,10 +11,10 @@ const NavLinks: NavLink[] = [
 ];
 export default function NavBar() {
   return (
-    <div className="w-full h-full flex flex-col gap-1">
+    <>
       {NavLinks.map((link) => (
         <NavItem key={link.href} name={link.name} href={link.href} />
       ))}
-    </div>
+    </>
   );
 }

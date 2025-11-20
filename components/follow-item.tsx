@@ -19,7 +19,9 @@ export default function FollowItem() {
         </UserHoverCard>
       </div>
 
-      <Button size={"sm"}>取关</Button>
+      <Button size={"sm"} className="cursor-pointer">
+        取关
+      </Button>
     </div>
   );
 }

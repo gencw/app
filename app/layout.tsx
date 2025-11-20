@@ -48,9 +48,7 @@ export default function RootLayout({
           <NavBar />
           <Follows />
         </div>
-        <main className="flex-1 sm:ml-14 md:ml-20 lg:ml-48 xl:ml-64">
-          {children}
-        </main>
+        <main className="flex-1 sm:ml-14 md:ml-20 lg:ml-64">{children}</main>
       </body>
     </html>
   );

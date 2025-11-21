@@ -4,6 +4,8 @@ export interface User {
   id: number;
   name: string;
   avatar: string;
+  bio: string;
+  checked: boolean;
 }
 
 // 生成 N 条假用户数据

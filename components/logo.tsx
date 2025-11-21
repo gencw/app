@@ -1,8 +1,20 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Logo() {
   return (
-    <div className="items-center justify-center  lg:p-6 lg:mt-0 mt-10 ">
-      <p className="font-extrabold text-xl  hidden lg:flex">群峰之巅</p>
-      <p className="font-extrabold text-xl  flex lg:hidden">top</p>
-    </div>
+    <Link
+      href="/"
+      className="lg:px-4 hidden sm:flex w-full items-center justify-center lg:justify-start"
+    >
+      <Image
+        src={"/logo.svg"}
+        alt="logo"
+        width={32}
+        height={32}
+        className="lg:hidden"
+      />
+      <div className="lg:block hidden ml-2 font-bold text-lg">群峰之巅</div>
+    </Link>
   );
 }

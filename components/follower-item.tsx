@@ -1,11 +1,14 @@
+import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button } from "./ui/button";
 import UserHoverCard from "./user-hover-card";
+import Check from "@/public/check.svg";
 interface FollowItemProps {
   user: {
     id: number;
     name: string;
+    bio: string;
     avatar: string;
+    checked: boolean;
   };
 }
 export default function FollowerItem({ user }: FollowItemProps) {
@@ -19,15 +22,15 @@ export default function FollowerItem({ user }: FollowItemProps) {
           </Avatar>
         </UserHoverCard>
         <UserHoverCard>
-          <div className="overflow-hidden text-ellipsis whitespace-nowrap max-w-[120px] hover:underline cursor-pointer">
-            {user.name}
+          <div className="flex flex-col max-w-[120px]">
+            <div className="truncate hover:underline cursor-pointer font-bold text-sm">
+              {user.name}
+            </div>
+            <p className="truncate text-sm text-gray-500">{user.bio}</p>
           </div>
         </UserHoverCard>
       </div>
-
-      <Button size={"sm"} className="cursor-pointer">
-        取关
-      </Button>
+      {user.checked && <Image src={Check} width={20} height={20} alt="check" />}
     </div>
   );
 }

@@ -40,7 +40,6 @@ export default function NavItem({
             width={24}
             height={24}
             alt="icon"
-            quality={100}
             src={isActive ? iconSelected! : icon}
           />
         )}

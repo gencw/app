@@ -12,5 +12,7 @@ export function generateMockFollows(count = 5): User[] {
     id: i + 1,
     name: faker.person.fullName(),
     avatar: faker.image.avatar(), // 自动生成头像 URL
+    bio: faker.lorem.sentence(),
+    checked: faker.datatype.boolean(),
   }));
 }

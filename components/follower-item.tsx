@@ -9,19 +9,21 @@ interface FollowItemProps {
     bio: string;
     avatar: string;
     checked: boolean;
+    fansCount: number;
+    followersCount: number;
   };
 }
 export default function FollowerItem({ user }: FollowItemProps) {
   return (
     <div className="pl-2 flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-2 ">
-        <UserHoverCard>
+        <UserHoverCard user={user}>
           <Avatar className="w-8 h-8 cursor-pointer">
             <AvatarImage src={user.avatar} alt={user.name} />
             <AvatarFallback>{"na"}</AvatarFallback>
           </Avatar>
         </UserHoverCard>
-        <UserHoverCard>
+        <UserHoverCard user={user}>
           <div className="flex flex-col max-w-[120px]">
             <div className="truncate hover:underline cursor-pointer font-bold text-sm">
               {user.name}

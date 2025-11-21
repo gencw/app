@@ -6,6 +6,8 @@ export interface User {
   avatar: string;
   bio: string;
   checked: boolean;
+  fansCount: number;
+  followersCount: number;
 }
 
 export function generateMockFollows(count = 5): User[] {
@@ -15,5 +17,7 @@ export function generateMockFollows(count = 5): User[] {
     avatar: faker.image.avatar(),
     bio: faker.lorem.sentence(),
     checked: faker.datatype.boolean(),
+    fansCount: faker.number.int({ min: 0, max: 100000 }),
+    followersCount: faker.number.int({ min: 0, max: 1000 }),
   }));
 }

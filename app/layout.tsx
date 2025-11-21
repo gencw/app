@@ -5,7 +5,9 @@ import NavBar from "@/components/nav-bar";
 import Logo from "@/public/logo.svg";
 import Link from "next/link";
 import Image from "next/image";
-import Follows from "@/components/follows";
+import Followers from "@/components/followers";
+import { Suspense } from "react";
+import FollowsSkeleton from "@/components/skeleton/follows-skeleton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   description: "群峰之巅",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -46,7 +48,9 @@ export default function RootLayout({
             </div>
           </Link>
           <NavBar />
-          <Follows />
+          <Suspense fallback={<FollowsSkeleton />}>
+            <Followers />
+          </Suspense>
         </div>
         <main className="flex-1 sm:ml-14 md:ml-20 lg:ml-64">{children}</main>
       </body>
